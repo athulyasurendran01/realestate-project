@@ -34,7 +34,7 @@
 
         <!-- ========== Left Sidebar Start ========== -->
         <div class="left side-menu">
-         @include('admin.includes.sidenav')
+            {{ App\Http\Controllers\MenuController::menus() }}
         </div>
         <!-- Left Sidebar End -->
 

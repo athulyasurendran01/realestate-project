@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Menu;
 use Illuminate\Http\Request;
+use Auth;
 
 class MenuController extends Controller
 {
@@ -15,6 +16,13 @@ class MenuController extends Controller
     public function index()
     {
         //
+    }
+
+    public static function menus(){
+        $user = Auth::User();     
+        $roleId = $user->role_id; 
+        $menus = Menu::all();
+        echo view('admin.includes.sidenav', compact('menus'));
     }
 
     /**
